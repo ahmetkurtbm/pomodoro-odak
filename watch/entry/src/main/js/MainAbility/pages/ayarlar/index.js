@@ -24,10 +24,10 @@ export default {
   refresh: function () {
     var s = engine.settings;
     this.preset = engine.presetName();
-    this.work = s.work + ' dk';
-    this.short = s.short + ' dk';
-    this.long = s.long + ' dk';
-    this.every = s.every + ' tur';
+    this.work = '' + s.work;
+    this.short = '' + s.short;
+    this.long = '' + s.long;
+    this.every = '' + s.every;
     this.vibrate = onOff(s.vibrate);
     this.keepOn = onOff(s.keepOn);
     this.auto = onOff(s.auto);

@@ -2,6 +2,16 @@
 
 Huawei Watch GT 6 için bileğinde Pomodoro odak zamanlayıcısı. Çalışmayı odak turlarına ve molalara böler, tur bitince titrer, ilerlemeni saatte tutar.
 
+<p align="center">
+  <img src="magaza/ekran/1-odak-470.png" width="200" alt="Odak turu">
+  <img src="magaza/ekran/2-mola-470.png" width="200" alt="Mola">
+  <img src="magaza/ekran/3-menu-470.png" width="200" alt="Menü">
+</p>
+<p align="center">
+  <img src="magaza/ekran/4-istatistik-470.png" width="200" alt="İstatistik">
+  <img src="magaza/ekran/5-mola-kosesi-470.png" width="200" alt="Mola köşesi">
+</p>
+
 - **Renkli ilerleme halkası:** odakta turuncu, molada yeşil, uzun molada mavi
 - **Titreşim:** tur bitince uzun, son dakikada kısa uyarı; düğmelere basınca dokunma hissi
 - **Hazır ayarlar:** Klasik 25/5, Derin 50/10, Kısa 15/3 ya da kendi sürelerin; dört turda bir uzun mola

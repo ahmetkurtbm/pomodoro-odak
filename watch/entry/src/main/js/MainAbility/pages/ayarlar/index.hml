@@ -9,7 +9,7 @@
     </list-item>
 
     <list-item class="row">
-        <text class="name">Odak</text>
+        <text class="name">Odak (dk)</text>
         <div class="stepper">
             <text class="step" onclick="workDown">-</text>
             <text class="value">{{work}}</text>
@@ -18,7 +18,7 @@
     </list-item>
 
     <list-item class="row">
-        <text class="name">Mola</text>
+        <text class="name">Mola (dk)</text>
         <div class="stepper">
             <text class="step" onclick="shortDown">-</text>
             <text class="value">{{short}}</text>
@@ -27,7 +27,7 @@
     </list-item>
 
     <list-item class="row">
-        <text class="name">Uzun mola</text>
+        <text class="name">Uzun mola (dk)</text>
         <div class="stepper">
             <text class="step" onclick="longDown">-</text>
             <text class="value">{{long}}</text>
@@ -36,7 +36,7 @@
     </list-item>
 
     <list-item class="row">
-        <text class="name">Uzun mola her</text>
+        <text class="name">Tur sayısı</text>
         <div class="stepper">
             <text class="step" onclick="everyDown">-</text>
             <text class="value">{{every}}</text>
