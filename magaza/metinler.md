@@ -1,6 +1,6 @@
 # AppGallery mağaza metinleri
 
-AppGallery Connect → My apps → Bilek Holo → App information alanlarına kopyala-yapıştır.
+AppGallery Connect → Apps and atomic services → Pomodoro Odak → App information alanlarına kopyala-yapıştır.
 
 ## Uygulama adı
 - Türkçe: **Pomodoro Odak**

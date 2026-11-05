@@ -1,8 +1,8 @@
 export default {
     onCreate: function () {
-        console.info('Bilek Holo onCreate');
+        console.info('Pomodoro Odak onCreate');
     },
     onDestroy: function () {
-        console.info('Bilek Holo onDestroy');
+        console.info('Pomodoro Odak onDestroy');
     }
 };

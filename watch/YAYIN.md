@@ -18,7 +18,7 @@ Bu rehber uygulamayı Huawei AppGallery'de herkese açık yayınlamak içindir. 
 ## 2. Release profili
 
 1. **Profiles** → **Add**
-2. **App:** Bilek Holo (`com.ahmet.bilekholo`). Paket adı değiştirilemez, sorun değil, kullanıcılar bunu görmez.
+2. **App:** Pomodoro Odak (`com.ahmet.bilekholo`). Paket adı değiştirilemez, sorun değil, kullanıcılar bunu görmez.
 3. **Type:** **Release**. Release profilinde cihaz seçilmez.
 4. **Certificate:** az önce oluşturduğun release sertifikası
 5. `.p7b` dosyasını `gt6-imza` klasörüne `pomodoro-release.p7b` adıyla indir.
@@ -34,7 +34,7 @@ Bu rehber uygulamayı Huawei AppGallery'de herkese açık yayınlamak içindir. 
 
 Bu adımlarda istersen ben derlerim, imza ayarını eklediğini söylemen yeterli.
 
-## 4. Uygulama bilgileri (My apps → Bilek Holo → App information)
+## 4. Uygulama bilgileri (Apps and atomic services → Pomodoro Odak → App information)
 
 | Alan | Öneri |
 |---|---|

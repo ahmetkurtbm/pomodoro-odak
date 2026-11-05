@@ -1,66 +1,48 @@
-# GT6 · Bilek Holo
+# Pomodoro Odak
 
-Huawei Watch GT 6 için bilekle 3D modelleme projesi. Havada bir **profil** çizersin (daire, kare, serbest çizim...), sonra ona bir **işlem** uygularsın (uzat, sivrilt, burgu, döndür, süpür). Sonuçta çıkan cisim saatte hologram gibi dönen bir tel kafes olarak görünür. Her cisim aslında bir **parametrik formül** ve o formülü doğrudan düzenleyebilirsin.
+Huawei Watch GT 6 için bileğinde Pomodoro odak zamanlayıcısı. Çalışmayı odak turlarına ve molalara böler, tur bitince titrer, ilerlemeni saatte tutar.
 
-## Şu anki durum: tarayıcı prototipi
+- **Renkli ilerleme halkası:** odakta turuncu, molada yeşil, uzun molada mavi
+- **Titreşim:** tur bitince uzun, son dakikada kısa uyarı; düğmelere basınca dokunma hissi
+- **Hazır ayarlar:** Klasik 25/5, Derin 50/10, Kısa 15/3 ya da kendi sürelerin; dört turda bir uzun mola
+- **İstatistik:** bugünkü turlar ve dakikalar, seri, son 7 günün grafiği
+- **Mola köşesi:** refleks oyunu ve dönen 3D hologramlar
+- **Kesintisiz süre:** menüde gezinirken ya da ekran kararınca sayar; uygulama kapanıp açılınca kaldığı yerden sürer
+- **Gizlilik:** internete bağlanmaz, veri toplamaz. [Gizlilik politikası](https://ahmetkurtbm.github.io/pomodoro-odak/magaza/gizlilik.html)
 
-`prototype/index.html` dosyasını tarayıcıda aç (çift tıklamak yeterli, sunucu gerekmiyor).
+Kontroller: sağdan sola kaydırınca menü, soldan sağa kaydırınca geri (zamanlayıcı ekranında uygulamadan çıkış).
 
-- **Saat ekranı:** 466×466, GT 6 46 mm ekranı boyutunda. Sürükleyerek cismi döndürürsün.
-- **Çiz:** Saat ekranına bir şekil çizersin. Daire ya da düz çizgi çizdiysen kusursuz haline çevrilir, başka bir şekilse serbest profil olarak kullanılır.
-- **Bilek modu:** Telefonda açarsan telefonu eğerek cismi döndürürsün (saatteki bilek hareketinin provası).
-- **Formül:** Her cismin formülü panelde görünür. Değiştirdiğin anda cisim de değişir.
-
-## Formül dili
-
-```
-# yorum
-u: 0 .. 2*pi        # u aralığı (profil boyunca)
-v: 0 .. 1           # v aralığı (işlem boyunca)
-px = cos(u)         # ara değişkenler, yukarıdan aşağı hesaplanır
-x = ...             # x, y, z zorunlu (z yukarı)
-```
-
-- Parametreler: `a b c d k`, panelde kaydırıcıyla değişir.
-- Operatörler: `+ - * / % ^`, `2pi` gibi örtük çarpma da çalışır. `%` matematiksel mod işlemidir.
-- Fonksiyonlar: `sin cos tan asin acos atan atan2 sinh cosh tanh sqrt abs exp log pow min max floor ceil round sign mod spow`
-- `spow(x, p)`: işaretli üs. Süper elips/kare için kullanılır.
-- `fx(u), fy(u)`: serbest çizimin koordinatları (u: 0..1).
-
-## Klasör yapısı
+## Klasörler
 
 ```
-prototype/
-  index.html, style.css, app.js   tarayıcı arayüzü (yalnızca prototip)
-  core/                           saate taşınacak çekirdek (DOM yok, ES5)
-    expr.js      ifade ayrıştırıcı — eval / new Function kullanmaz
-    surface.js   formül programı → nokta ızgarası
-    shapes.js    profiller, işlemler, hazır cisimler
-    render.js    tel kafes hologram çizici (yalnızca temel canvas 2D)
-    gesture.js   çizim örnekleme + daire/çizgi tanıma
-```
-
-`core/` klasörü saatte de aynen çalışacak şekilde yazıldı: ES5, DOM yok. Saatin JavaScript motorunda (JerryScript) `eval` olmayabileceği için formüller kendi yazdığımız ayrıştırıcıyla çalışıyor.
-
-```
-watch/                            GT 6 DevEco Studio projesi
-  entry/src/main/config.json      uygulama tanımı (liteWearable)
+watch/                    DevEco Studio projesi (HarmonyOS lite wearable, HML + CSS + JS)
   entry/src/main/js/MainAbility/
-    pages/index/                  saat ekranı (hml + css + js)
-    common/holo/                  prototype/core'un otomatik kopyası
-tools/sync-core.js                çekirdeği saate kopyalar
+    common/engine.js      Pomodoro motoru: süre, aşamalar, titreşim, kayıt, istatistik
+    common/store.js       kalıcı kayıt (@system.storage)
+    common/frames/        hologram kareleri (tools/ ile üretilir)
+    common/icons/         düğme simgeleri (tools/make-icons.py)
+    pages/                index (zamanlayıcı), menu, ayarlar, istatistik, mola, refleks, holo
+  KURULUM.md              saate debug kurulumu: imza, yükleme, bilinen sorunlar
+  YAYIN.md                AppGallery'de yayınlama adımları
+magaza/                   mağaza simgeleri, metinler, gizlilik politikası
+prototype/                3D hologram ve formül motorunun tarayıcı prototipi
+tools/                    hologram kare üreticisi, simge çizici, çekirdek kopyalayıcı
 ```
 
-## Saat sürümü
+## Derleme
 
-`watch/` klasörü GT 6 için DevEco Studio projesi (lite wearable, HML + CSS + JS). Kurulum ve imzalama adımları: [watch/KURULUM.md](watch/KURULUM.md).
+1. DevEco Studio ile `watch/` klasörünü aç.
+2. `watch/build-profile.example.json5` dosyasını `build-profile.json5` olarak kopyala ve kendi imza ayarını gir. Gerçek ayar dosyası şifre içerdiği için depoda yok.
+3. Saate yükleme: [watch/KURULUM.md](watch/KURULUM.md). Mağaza paketi: [watch/YAYIN.md](watch/YAYIN.md).
 
-Çekirdek tek kaynaktan geliyor. `prototype/core/` altında bir değişiklik yaptıktan sonra `node tools/sync-core.js` komutunu çalıştır.
+Paket adı `com.ahmet.bilekholo`, projenin ilk adından kaldı. AppGallery'de değiştirilemiyor, kullanıcılar görmüyor.
 
-## Yol haritası
+## GT 6'da öğrendiklerimiz
 
-1. ✅ Tarayıcı prototipi: profil × işlem, formül editörü, hologram görünüm
-2. ✅ Saat projesi: GT 6 = lite wearable (JS) doğrulandı, bilek eğimiyle döndürme, parmakla çizim, hazır cisimler
-3. ⬜ Saatte ilk deneme: imzalama, yükleme, ivmeölçer izni ve performans kontrolü
-4. ⬜ Havada hareket tanıma: ivmeölçer verisinden daire, çizgi gibi hareketleri tanıma (şablon eşleme / DTW)
-5. ⬜ Birden çok cismi aynı sahnede birleştirme
+GT 6, üçüncü parti uygulamalar için yalnızca **lite wearable** (JS) çalıştırıyor ve bu platformun sürprizleri var. Ayrıntılar [KURULUM.md](watch/KURULUM.md) içinde:
+
+- Uygulama iki simge ister: `icon.png` 104×104 ve `icon_small.png` 92×92. Yoksa kurulum "40. Invalid configuration file format" hatası verir.
+- JavaScript motoru regex desteklemez. Kodda regex varsa "34. Internal error" çıkar.
+- Canvas her çizim komutunu bellekte tutar. Animasyon birkaç saniyede saati çökertir; bu yüzden halka hazır `progress` bileşeni, hologram ise önceden çizilmiş resimler.
+- `class="{{...}}"` bağlama ve `:active` stili çalışmaz. Bunların yerine `show` ve titreşim kullanılır.
+- İvmeölçer üçüncü parti uygulamaya `0 0 0` verir. Titreşim, kayıt ve ekranı açık tutma ise çalışır.

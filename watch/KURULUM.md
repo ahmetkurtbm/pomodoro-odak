@@ -1,4 +1,4 @@
-# Bilek Holo'yu GT 6'ya yükleme
+# Pomodoro Odak'ı GT 6'ya yükleme (debug)
 
 GT 6, üçüncü parti uygulamalar için **lite wearable** platformunda çalışır: HML + CSS + JavaScript (ES5.1), JerryScript motoru, yaklaşık 1 MB bellek. ArkTS uygulamaları GT 6'ya **yüklenmez**. Bu proje bu yüzden lite JS ile yazıldı.
 
@@ -51,7 +51,7 @@ GT'de Wi-Fi veya kabloyla doğrudan yükleme (hdc) **yok**. Yükleme telefon üz
 2. İmzalı dosya: `entry/build/default/outputs/default/entry-default-signed.hap`
 3. Bu dosyayı telefona at (USB, bulut ya da e-posta).
 4. Telefonda **DevEco Assistant** → saat bağlıyken HAP dosyasını seçip yükle.
-5. Saatte uygulama listesinde **Bilek Holo** çıkmalı.
+5. Saatte uygulama listesinde **Pomodoro Odak** çıkmalı.
 6. Hata ayıklama kayıtları için DevEco Assistant'ta **View Logs** (查看日志) bölümünü kullanabilirsin.
 
 ## 6. Uygulamayı kullanma
