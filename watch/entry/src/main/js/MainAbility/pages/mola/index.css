@@ -1,0 +1,70 @@
+.container {
+  width: 466px;
+  height: 466px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+}
+
+.title {
+  width: 300px;
+  height: 44px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 30px;
+  color: #3DDC84;
+}
+
+.status {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #9AA7B4;
+}
+
+.tile {
+  width: 330px;
+  height: 112px;
+  margin-top: 12px;
+  border-radius: 30px;
+  background-color: #131C24;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.orange {
+  color: #FF8A3D;
+}
+
+.cyan {
+  color: #5AF0FF;
+}
+
+.desc {
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #9AA7B4;
+}
+
+.back {
+  width: 170px;
+  height: 62px;
+  margin-top: 14px;
+  border-radius: 31px;
+  background-color: #1A2630;
+  text-align: center;
+  font-size: 22px;
+  color: #9AA7B4;
+}

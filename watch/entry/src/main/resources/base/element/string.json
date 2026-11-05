@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "MainAbility_desc",
+      "value": "Bileğinde Pomodoro odak zamanlayıcısı"
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "Pomodoro Odak"
+    }
+  ]
+}

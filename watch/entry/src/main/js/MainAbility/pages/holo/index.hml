@@ -1,0 +1,10 @@
+<div class="container" onswipe="onSwipe">
+    <text class="title">{{name}}</text>
+    <text class="sub">{{info}}</text>
+    <image class="holo" src="{{src}}" onclick="togglePause"></image>
+    <div class="row">
+        <text class="btn" onclick="prev">&lt;</text>
+        <text class="btn" onclick="back">Geri</text>
+        <text class="btn" onclick="next">&gt;</text>
+    </div>
+</div>

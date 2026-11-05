@@ -1,0 +1,99 @@
+/* 466 × 466 yuvarlak ekran; hedef 9 sabit konumdan birinde çıkar (p0..p8) */
+
+.container {
+  width: 466px;
+  height: 466px;
+  background-color: #000000;
+}
+
+.bg {
+  left: 0px;
+  top: 0px;
+  width: 466px;
+  height: 466px;
+  background-color: #000000;
+}
+
+.msg {
+  left: 83px;
+  top: 40px;
+  width: 300px;
+  height: 44px;
+  text-align: center;
+  font-size: 30px;
+  color: #5AF0FF;
+}
+
+.detail {
+  left: 63px;
+  top: 200px;
+  width: 340px;
+  height: 66px;
+  text-align: center;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.menu {
+  left: 148px;
+  top: 388px;
+  width: 170px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #0C1A22;
+  text-align: center;
+  font-size: 22px;
+  color: #7D8FA3;
+}
+
+.target {
+  width: 96px;
+  height: 96px;
+  border-radius: 48px;
+  background-color: #5AF0FF;
+}
+
+.p0 {
+  left: 185px;
+  top: 185px;
+}
+
+.p1 {
+  left: 289px;
+  top: 185px;
+}
+
+.p2 {
+  left: 259px;
+  top: 259px;
+}
+
+.p3 {
+  left: 185px;
+  top: 289px;
+}
+
+.p4 {
+  left: 111px;
+  top: 259px;
+}
+
+.p5 {
+  left: 81px;
+  top: 185px;
+}
+
+.p6 {
+  left: 111px;
+  top: 111px;
+}
+
+.p7 {
+  left: 185px;
+  top: 81px;
+}
+
+.p8 {
+  left: 259px;
+  top: 111px;
+}

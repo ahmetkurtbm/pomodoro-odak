@@ -1,0 +1,74 @@
+{
+  // ÖRNEK: build-profile.json5 olarak kopyala, sonra DevEco > File > Project Structure > Signing Configs
+  // ile kendi anahtarını, profilini ve sertifikanı seç (bkz. KURULUM.md, YAYIN.md).
+  // Gerçek build-profile.json5 şifre içerdiği için depoya girmez.
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "C:/yol/anahtar.p12",
+          "storePassword": "",
+          "keyAlias": "takma-ad",
+          "keyPassword": "",
+          "signAlg": "SHA256withECDSA",
+          "profile": "C:/yol/debug.p7b",
+          "certpath": "C:/yol/debug.cer"
+        }
+      },
+      {
+        "name": "release",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "C:/yol/anahtar.p12",
+          "storePassword": "",
+          "keyAlias": "takma-ad",
+          "keyPassword": "",
+          "signAlg": "SHA256withECDSA",
+          "profile": "C:/yol/release.p7b",
+          "certpath": "C:/yol/release.cer"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.0.1(21)",
+        "compatibleSdkVersion": "5.1.0(18)",
+        "runtimeOS": "HarmonyOS"
+      },
+      {
+        "name": "release",
+        "signingConfig": "release",
+        "targetSdkVersion": "6.0.1(21)",
+        "compatibleSdkVersion": "5.1.0(18)",
+        "runtimeOS": "HarmonyOS"
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default",
+            "release"
+          ]
+        }
+      ]
+    }
+  ]
+}

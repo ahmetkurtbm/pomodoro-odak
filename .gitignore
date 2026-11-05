@@ -1,0 +1,22 @@
+# İmza: anahtar, sertifika, profil ve şifreli şifrelerin olduğu ayar dosyası depoya girmez.
+# Örnek ayar: watch/build-profile.example.json5
+*.p12
+*.cer
+*.p7b
+*.csr
+material/
+watch/build-profile.json5
+
+# Derleme çıktıları ve önbellekler
+**/build/
+**/.hvigor/
+**/oh_modules/
+**/node_modules/
+**/.idea/
+**/local.properties
+**/.test/
+*.hap
+*.app
+
+# Eski, kullanılmayan mağaza simgeleri
+magaza/*-eski-koyu.png

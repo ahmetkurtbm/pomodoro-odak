@@ -1,0 +1,31 @@
+<stack class="container" onswipe="onSwipe">
+    <!-- saat sınıfı veriye bağlamayı kabul etmiyor: her aşamanın kendi renkli halkası -->
+    <progress class="ring work" type="arc" percent="{{percent}}" show="{{isWork}}"></progress>
+    <progress class="ring short" type="arc" percent="{{percent}}" show="{{isShort}}"></progress>
+    <progress class="ring long" type="arc" percent="{{percent}}" show="{{isLong}}"></progress>
+
+    <text class="preset">{{preset}}</text>
+    <text class="label work-text" show="{{isWork}}">{{label}}</text>
+    <text class="label short-text" show="{{isShort}}">{{label}}</text>
+    <text class="label long-text" show="{{isLong}}">{{label}}</text>
+    <text class="time">{{time}}</text>
+    <text class="round">{{round}}</text>
+
+    <div class="side left" onclick="reset">
+        <image class="side-icon" src="/common/icons/reset.png"></image>
+    </div>
+    <div class="main work-bg" onclick="toggle" show="{{isWork}}">
+        <image class="main-icon" src="{{icon}}"></image>
+    </div>
+    <div class="main short-bg" onclick="toggle" show="{{isShort}}">
+        <image class="main-icon" src="{{icon}}"></image>
+    </div>
+    <div class="main long-bg" onclick="toggle" show="{{isLong}}">
+        <image class="main-icon" src="{{icon}}"></image>
+    </div>
+    <div class="side right" onclick="skip">
+        <image class="side-icon" src="/common/icons/skip.png"></image>
+    </div>
+
+    <text class="menu" onclick="openMenu">MENÜ</text>
+</stack>

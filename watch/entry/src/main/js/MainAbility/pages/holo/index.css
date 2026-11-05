@@ -1,0 +1,49 @@
+.container {
+  width: 466px;
+  height: 466px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+}
+
+.title {
+  width: 300px;
+  height: 44px;
+  margin-top: 46px;
+  text-align: center;
+  font-size: 30px;
+  color: #5AF0FF;
+}
+
+.sub {
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: #7D8FA3;
+}
+
+/* kareler 160 × 160 üretilir (tools/frames-to-png.py) */
+.holo {
+  width: 160px;
+  height: 160px;
+  margin-top: 12px;
+}
+
+.row {
+  width: 340px;
+  height: 76px;
+  margin-top: 18px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 106px;
+  height: 76px;
+  border-radius: 38px;
+  background-color: #0C1A22;
+  text-align: center;
+  font-size: 30px;
+  color: #5AF0FF;
+}

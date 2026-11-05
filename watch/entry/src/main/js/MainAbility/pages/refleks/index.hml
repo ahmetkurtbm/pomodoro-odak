@@ -1,0 +1,16 @@
+<stack class="container" onswipe="onSwipe">
+    <div class="bg" onclick="tapBg"></div>
+    <text class="msg">{{msg}}</text>
+    <text class="detail">{{detail}}</text>
+    <!-- saat sınıfı veriye bağlamayı kabul etmiyor: her konum için ayrı hedef -->
+    <div class="target p0" show="{{on0}}" onclick="tapTarget"></div>
+    <div class="target p1" show="{{on1}}" onclick="tapTarget"></div>
+    <div class="target p2" show="{{on2}}" onclick="tapTarget"></div>
+    <div class="target p3" show="{{on3}}" onclick="tapTarget"></div>
+    <div class="target p4" show="{{on4}}" onclick="tapTarget"></div>
+    <div class="target p5" show="{{on5}}" onclick="tapTarget"></div>
+    <div class="target p6" show="{{on6}}" onclick="tapTarget"></div>
+    <div class="target p7" show="{{on7}}" onclick="tapTarget"></div>
+    <div class="target p8" show="{{on8}}" onclick="tapTarget"></div>
+    <text class="menu" onclick="back">Geri</text>
+</stack>

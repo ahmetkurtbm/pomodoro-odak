@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bilek Holo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="watch-col">
+      <div class="watch" id="watch">
+        <div class="screen-wrap">
+          <canvas id="screen" aria-label="Saat ekranı: 3D hologram"></canvas>
+          <div class="scan"></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="btnDraw">✍ Çiz</button>
+        <button id="btnSpin" class="on">Otomatik dönüş</button>
+        <button id="btnTilt">Bilek modu</button>
+      </div>
+      <p class="hint" id="hint">Sürükle: döndür · Çiz: ekrana profil çiz · Bilek modu: telefonu eğerek döndür</p>
+    </section>
+
+    <section class="panel">
+      <h1>Bilek Holo <small>GT 6 prototipi</small></h1>
+
+      <div class="group">
+        <h2>1 · Profil</h2>
+        <div class="chips" id="profiles"></div>
+      </div>
+
+      <div class="group">
+        <h2>2 · İşlem</h2>
+        <div class="chips" id="ops"></div>
+      </div>
+
+      <div class="group">
+        <h2>Parametreler</h2>
+        <div id="sliders"></div>
+      </div>
+
+      <div class="group">
+        <h2>Hazır cisimler</h2>
+        <div class="chips" id="gallery"></div>
+      </div>
+
+      <div class="group">
+        <h2>Formül</h2>
+        <textarea id="code" spellcheck="false" autocomplete="off"></textarea>
+        <div class="status" id="status"></div>
+        <p class="help">
+          Yazdıkça uygulanır. <code>x y z</code> zorunlu, <code>a b c d k</code> kaydırıcılara bağlı.
+          Fonksiyonlar: <code>sin cos tan sqrt abs exp log pow spow min max mod</code> …
+          Serbest çizim: <code>fx(u) fy(u)</code>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="core/expr.js"></script>
+  <script src="core/surface.js"></script>
+  <script src="core/shapes.js"></script>
+  <script src="core/render.js"></script>
+  <script src="core/gesture.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

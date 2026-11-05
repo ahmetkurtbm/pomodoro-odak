@@ -1,0 +1,170 @@
+:root {
+  --bg: #05070b;
+  --panel: #0c1118;
+  --line: #1b2633;
+  --text: #d7e3ee;
+  --muted: #7d8fa3;
+  --holo: #5af0ff;
+  --err: #ff8080;
+  --ok: #7ee2a8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 500px) minmax(0, 1fr);
+  gap: 36px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+  align-items: start;
+}
+
+.watch-col {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; gap: 24px; }
+  .watch-col { position: static; }
+}
+
+/* GT 6 gövdesi ve yuvarlak ekranı */
+.watch {
+  width: min(466px, 88vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 14px;
+  background: linear-gradient(145deg, #2c3138, #0d0f12 60%, #1f2329);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .6), inset 0 0 0 1px rgba(255, 255, 255, .06);
+}
+
+.screen-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #000;
+}
+
+#screen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+.watch.drawing #screen { cursor: crosshair; }
+
+.scan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(90, 240, 255, .045) 0 1px, transparent 1px 3px);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+button {
+  font: inherit;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 15px;
+  cursor: pointer;
+}
+
+button:hover { border-color: #2f4357; }
+
+button.on {
+  border-color: var(--holo);
+  color: var(--holo);
+  background: rgba(90, 240, 255, .08);
+}
+
+.hint {
+  margin: 0;
+  max-width: 466px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+h1 { margin: 0; font-size: 22px; letter-spacing: .02em; }
+h1 small { margin-left: 8px; font-size: 14px; font-weight: 400; color: var(--muted); }
+
+h2 {
+  margin: 0 0 9px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button { padding: 5px 12px; font-size: 14px; }
+
+.slider {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 12px;
+  margin-bottom: 10px;
+}
+
+.slider label { font-size: 14px; }
+.slider label b { color: var(--holo); font-weight: 600; margin-right: 6px; font-family: ui-monospace, Consolas, monospace; }
+.slider output { font-size: 13px; color: var(--holo); font-variant-numeric: tabular-nums; }
+.slider input { grid-column: 1 / -1; width: 100%; accent-color: var(--holo); }
+
+.empty { font-size: 13px; color: var(--muted); margin: 0; }
+
+textarea {
+  width: 100%;
+  min-height: 280px;
+  resize: vertical;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #070a0f;
+  color: #cfe9f2;
+  font: 13px/1.6 ui-monospace, "Cascadia Code", Consolas, monospace;
+  tab-size: 2;
+}
+
+textarea:focus { outline: none; border-color: #2f4357; }
+
+.status { margin-top: 6px; font-size: 13px; color: var(--muted); min-height: 1.5em; }
+.status.ok { color: var(--ok); }
+.status.err { color: var(--err); }
+
+.help { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+code { color: var(--holo); font-size: 12.5px; }

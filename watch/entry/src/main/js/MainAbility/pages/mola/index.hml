@@ -1,0 +1,13 @@
+<div class="container" onswipe="onSwipe">
+    <text class="title">Mola köşesi</text>
+    <text class="status">{{status}}</text>
+    <div class="tile" onclick="openRefleks">
+        <text class="name orange">Refleks</text>
+        <text class="desc">Hedefe en hızlı dokun</text>
+    </div>
+    <div class="tile" onclick="openHolo">
+        <text class="name cyan">Hologram</text>
+        <text class="desc">Dönen 3D cisimler</text>
+    </div>
+    <text class="back" onclick="back">Geri</text>
+</div>

@@ -1,0 +1,147 @@
+/* Zamanlayıcı. GT 6: 466 × 466 yuvarlak ekran.
+   Renkler: odak turuncu, mola yeşil, uzun mola mavi.
+   Saat :active basılı stilini desteklemiyor; basınca tepki titreşimle verilir. */
+
+.container {
+  width: 466px;
+  height: 466px;
+  background-color: #000000;
+}
+
+.ring {
+  left: 10px;
+  top: 10px;
+  width: 446px;
+  height: 446px;
+  start-angle: 0deg;
+  total-angle: 360deg;
+  stroke-width: 16px;
+}
+
+.work {
+  color: #FF8A3D;
+  background-color: #2E1A0E;
+}
+
+.short {
+  color: #3DDC84;
+  background-color: #0E2A1A;
+}
+
+.long {
+  color: #4DA3FF;
+  background-color: #0E1E30;
+}
+
+.preset {
+  left: 133px;
+  top: 58px;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: #7D8FA3;
+}
+
+.label {
+  left: 108px;
+  top: 88px;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.work-text {
+  color: #FF8A3D;
+}
+
+.short-text {
+  color: #3DDC84;
+}
+
+.long-text {
+  color: #4DA3FF;
+}
+
+.time {
+  left: 83px;
+  top: 126px;
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  font-size: 84px;
+  color: #F0F4F8;
+}
+
+.round {
+  left: 133px;
+  top: 226px;
+  width: 200px;
+  height: 32px;
+  text-align: center;
+  font-size: 22px;
+  color: #9AA7B4;
+}
+
+.main {
+  left: 171px;
+  top: 266px;
+  width: 124px;
+  height: 124px;
+  border-radius: 62px;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-bg {
+  background-color: #FF8A3D;
+}
+
+.short-bg {
+  background-color: #3DDC84;
+}
+
+.long-bg {
+  background-color: #4DA3FF;
+}
+
+.main-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.side {
+  top: 284px;
+  width: 88px;
+  height: 88px;
+  border-radius: 44px;
+  background-color: #1A2630;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  left: 71px;
+}
+
+.right {
+  left: 307px;
+}
+
+.side-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.menu {
+  left: 158px;
+  top: 398px;
+  width: 150px;
+  height: 46px;
+  border-radius: 23px;
+  background-color: #131C24;
+  text-align: center;
+  font-size: 20px;
+  color: #9AA7B4;
+}

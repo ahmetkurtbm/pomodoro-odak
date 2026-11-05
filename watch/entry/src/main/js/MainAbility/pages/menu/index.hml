@@ -1,0 +1,22 @@
+<div class="container" onswipe="onSwipe">
+    <text class="title">Pomodoro</text>
+    <text class="status">{{status}}</text>
+    <div class="grid">
+        <div class="tile" onclick="openTimer">
+            <image class="icon" src="/common/icons/timer.png"></image>
+            <text class="name">Zamanlayıcı</text>
+        </div>
+        <div class="tile" onclick="openStats">
+            <image class="icon" src="/common/icons/chart.png"></image>
+            <text class="name">İstatistik</text>
+        </div>
+        <div class="tile" onclick="openSettings">
+            <image class="icon" src="/common/icons/gear.png"></image>
+            <text class="name">Ayarlar</text>
+        </div>
+        <div class="tile" onclick="openBreak">
+            <image class="icon" src="/common/icons/game.png"></image>
+            <text class="name">Mola köşesi</text>
+        </div>
+    </div>
+</div>

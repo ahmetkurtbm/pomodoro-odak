@@ -1,0 +1,64 @@
+<list class="list" onswipe="onSwipe">
+    <list-item class="head">
+        <text class="title">İstatistik</text>
+    </list-item>
+
+    <list-item class="summary">
+        <div class="cell">
+            <text class="num orange">{{today}}</text>
+            <text class="cap">tur</text>
+        </div>
+        <div class="cell">
+            <text class="num green">{{minutes}}</text>
+            <text class="cap">dakika</text>
+        </div>
+        <div class="cell">
+            <text class="num blue">{{streak}}</text>
+            <text class="cap">gün seri</text>
+        </div>
+    </list-item>
+
+    <list-item class="sub-row">
+        <text class="sub">Son 7 gün</text>
+    </list-item>
+
+    <list-item class="bar-row">
+        <text class="day">{{l0}}</text>
+        <progress class="bar" type="horizontal" percent="{{p0}}"></progress>
+        <text class="count">{{c0}}</text>
+    </list-item>
+    <list-item class="bar-row">
+        <text class="day">{{l1}}</text>
+        <progress class="bar" type="horizontal" percent="{{p1}}"></progress>
+        <text class="count">{{c1}}</text>
+    </list-item>
+    <list-item class="bar-row">
+        <text class="day">{{l2}}</text>
+        <progress class="bar" type="horizontal" percent="{{p2}}"></progress>
+        <text class="count">{{c2}}</text>
+    </list-item>
+    <list-item class="bar-row">
+        <text class="day">{{l3}}</text>
+        <progress class="bar" type="horizontal" percent="{{p3}}"></progress>
+        <text class="count">{{c3}}</text>
+    </list-item>
+    <list-item class="bar-row">
+        <text class="day">{{l4}}</text>
+        <progress class="bar" type="horizontal" percent="{{p4}}"></progress>
+        <text class="count">{{c4}}</text>
+    </list-item>
+    <list-item class="bar-row">
+        <text class="day">{{l5}}</text>
+        <progress class="bar" type="horizontal" percent="{{p5}}"></progress>
+        <text class="count">{{c5}}</text>
+    </list-item>
+    <list-item class="bar-row">
+        <text class="day">{{l6}}</text>
+        <progress class="bar" type="horizontal" percent="{{p6}}"></progress>
+        <text class="count">{{c6}}</text>
+    </list-item>
+
+    <list-item class="foot">
+        <text class="back" onclick="back">Geri</text>
+    </list-item>
+</list>

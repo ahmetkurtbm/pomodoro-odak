@@ -1,0 +1,65 @@
+<list class="list" onswipe="onSwipe">
+    <list-item class="head">
+        <text class="title">Ayarlar</text>
+    </list-item>
+
+    <list-item class="row">
+        <text class="name">Hazır ayar</text>
+        <text class="pill" onclick="nextPreset">{{preset}}</text>
+    </list-item>
+
+    <list-item class="row">
+        <text class="name">Odak</text>
+        <div class="stepper">
+            <text class="step" onclick="workDown">-</text>
+            <text class="value">{{work}}</text>
+            <text class="step" onclick="workUp">+</text>
+        </div>
+    </list-item>
+
+    <list-item class="row">
+        <text class="name">Mola</text>
+        <div class="stepper">
+            <text class="step" onclick="shortDown">-</text>
+            <text class="value">{{short}}</text>
+            <text class="step" onclick="shortUp">+</text>
+        </div>
+    </list-item>
+
+    <list-item class="row">
+        <text class="name">Uzun mola</text>
+        <div class="stepper">
+            <text class="step" onclick="longDown">-</text>
+            <text class="value">{{long}}</text>
+            <text class="step" onclick="longUp">+</text>
+        </div>
+    </list-item>
+
+    <list-item class="row">
+        <text class="name">Uzun mola her</text>
+        <div class="stepper">
+            <text class="step" onclick="everyDown">-</text>
+            <text class="value">{{every}}</text>
+            <text class="step" onclick="everyUp">+</text>
+        </div>
+    </list-item>
+
+    <list-item class="row">
+        <text class="name">Titreşim</text>
+        <text class="pill" onclick="flipVibrate">{{vibrate}}</text>
+    </list-item>
+
+    <list-item class="row">
+        <text class="name">Ekranı açık tut</text>
+        <text class="pill" onclick="flipKeepOn">{{keepOn}}</text>
+    </list-item>
+
+    <list-item class="row">
+        <text class="name">Otomatik başlat</text>
+        <text class="pill" onclick="flipAuto">{{auto}}</text>
+    </list-item>
+
+    <list-item class="foot">
+        <text class="back" onclick="back">Geri</text>
+    </list-item>
+</list>
