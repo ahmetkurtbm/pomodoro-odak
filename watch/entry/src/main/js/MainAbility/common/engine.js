@@ -142,8 +142,9 @@ function tick() {
   notify();
 }
 
-function recordWork() {
-  var k = '' + dayKey(now());
+// at: turun bittiği an. Uygulama kapalıyken biten tur, açıldığı güne değil bittiği güne yazılır.
+function recordWork(at) {
+  var k = '' + dayKey(at);
   if (!stats[k]) stats[k] = [0, 0];
   stats[k][0] += 1;
   stats[k][1] += settings.work;
@@ -153,7 +154,7 @@ function recordWork() {
 // aşama bitti: istatistik, titreşim, sonraki aşama
 function finish() {
   var wasWork = state.mode === 'work';
-  if (wasWork) recordWork();
+  if (wasWork) recordWork(state.running ? state.endAt : now());
   buzz('long');
   if (wasWork) {
     state.mode = state.round >= settings.every ? 'long' : 'short';
@@ -229,29 +230,33 @@ function applyPreset(i) {
   }
 }
 
-function changed() {
-  // süre değişince duraklatılmış aşama yeni süreyle başlar
-  if (!state.running) state.left = totalOf(state.mode);
+// before: değişiklikten önce o anki aşamanın süresi (ms). Duraklatılmış aşama yalnızca
+// kendi süresi değiştiyse yeni süreyle baştan başlar; tur sayısı gibi başka bir ayar
+// değişince kalan süre korunur.
+function changed(before) {
+  if (!state.running && totalOf(state.mode) !== before) state.left = totalOf(state.mode);
   saveSettings();
   saveState();
 }
 
 function nextPreset() {
+  var before = totalOf(state.mode);
   applyPreset(settings.preset + 1 >= PRESETS.length ? 0 : settings.preset + 1);
-  changed();
+  changed(before);
 }
 
 // field: 'work' | 'short' | 'long' | 'every'
 function adjust(field, delta) {
   var limits = { work: [5, 90], short: [1, 30], long: [5, 45], every: [2, 8] };
   var step = field === 'every' ? 1 : (field === 'work' ? 5 : 1);
+  var before = totalOf(state.mode);
   var v = settings[field] + delta * step;
   if (v < limits[field][0]) v = limits[field][0];
   if (v > limits[field][1]) v = limits[field][1];
   settings[field] = v;
   if (field !== 'every') settings.preset = -1;
   if (state.round > settings.every) state.round = settings.every;
-  changed();
+  changed(before);
 }
 
 function flip(field) {

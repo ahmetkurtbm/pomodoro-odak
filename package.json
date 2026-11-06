@@ -1,0 +1,12 @@
+{
+  "name": "pomodoro-odak",
+  "private": true,
+  "description": "Huawei Watch GT 6 için Pomodoro odak zamanlayıcısı",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

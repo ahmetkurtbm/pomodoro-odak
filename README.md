@@ -1,5 +1,7 @@
 # Pomodoro Odak
 
+[![CI](https://github.com/ahmetkurtbm/pomodoro-odak/actions/workflows/ci.yml/badge.svg)](https://github.com/ahmetkurtbm/pomodoro-odak/actions/workflows/ci.yml) [![Lisans: MIT](https://img.shields.io/badge/lisans-MIT-blue.svg)](LICENSE)
+
 Huawei Watch GT 6 için bileğinde Pomodoro odak zamanlayıcısı. Çalışmayı odak turlarına ve molalara böler, tur bitince titrer, ilerlemeni saatte tutar.
 
 <p align="center">
@@ -37,6 +39,7 @@ watch/                    DevEco Studio projesi (HarmonyOS lite wearable, HML + 
 magaza/                   mağaza simgeleri, metinler, gizlilik politikası
 prototype/                3D hologram ve formül motorunun tarayıcı prototipi
 tools/                    hologram kare üreticisi, simge çizici, çekirdek kopyalayıcı
+test/                     motor ve saat kısıtları için testler (node --test)
 ```
 
 ## Derleme
@@ -44,6 +47,14 @@ tools/                    hologram kare üreticisi, simge çizici, çekirdek kop
 1. DevEco Studio ile `watch/` klasörünü aç.
 2. `watch/build-profile.example.json5` dosyasını `build-profile.json5` olarak kopyala ve kendi imza ayarını gir. Gerçek ayar dosyası şifre içerdiği için depoda yok.
 3. Saate yükleme: [watch/KURULUM.md](watch/KURULUM.md). Mağaza paketi: [watch/YAYIN.md](watch/YAYIN.md).
+
+## Test
+
+```bash
+npm test
+```
+
+Node 20+ ister, bağımlılık yok. Pomodoro motoru saatin parçaları (kayıt, titreşim, ekran, saat) taklit edilerek çalıştırılır: tur geçişleri, uzun mola sırası, kaldığı yerden devam, ayar değişiklikleri, istatistik ve seri. Saate giden kod ayrıca GT 6'nın kısıtlarına göre taranır: regex, canvas, sınıf bağlama, simge boyutları. Testler her gönderimde GitHub Actions'ta çalışır.
 
 Paket adı `com.ahmet.bilekholo`, projenin ilk adından kaldı. AppGallery'de değiştirilemiyor, kullanıcılar görmüyor.
 
@@ -56,3 +67,7 @@ GT 6, üçüncü parti uygulamalar için yalnızca **lite wearable** (JS) çalı
 - Canvas her çizim komutunu bellekte tutar. Animasyon birkaç saniyede saati çökertir; bu yüzden halka hazır `progress` bileşeni, hologram ise önceden çizilmiş resimler.
 - `class="{{...}}"` bağlama ve `:active` stili çalışmaz. Bunların yerine `show` ve titreşim kullanılır.
 - İvmeölçer üçüncü parti uygulamaya `0 0 0` verir. Titreşim, kayıt ve ekranı açık tutma ise çalışır.
+
+## Lisans
+
+[MIT](LICENSE)
