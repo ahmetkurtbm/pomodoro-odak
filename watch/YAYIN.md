@@ -30,10 +30,10 @@ DevEco Studio'da ürün `release` seçilip **Build > Build Hap(s)/APP(s) > Build
 
 ## 3. AppGallery Connect
 
-1. **Apps and atomic services → Release**: paket adı, uygulama adı (Pomodoro Odak), cihaz **Smart watch**, varsayılan dil Türkçe.
+1. **Apps and atomic services → Release**: paket adı, uygulama adı (Pomodoro Odak), cihaz **Sports watch**, varsayılan dil Türkçe.
 2. **Package management → Upload**: `.app` dosyası, kullanım senaryosu "Testing and official release", Çin anakarası "No".
 3. **App information**:
-   - Cihazlar: yalnızca **Smart watch**. Paket tek cihaz türü destekler; Sports watch da seçilirse paket sürüm ekranında "Unavailable" görünür ve seçilemez ("The device types supported by the package are fewer than those specified").
+   - Cihazlar: yalnızca **Sports watch**. AppGallery lite wearable paketlerini (GT serisi) "Sports watch" olarak tanır; Smart watch da seçiliyse paket sürüm ekranında "Unavailable" görünür ve seçilemez ("The device types supported by the package are fewer than those specified"). Uygulamayı oluştururken de cihaz olarak Sports watch seçilmeli.
    - Simge: `magaza/simge-216-saydam.png` (paketteki simgeyle aynı, saydam zemin; 1024 px sürümü de var)
    - Kategori: Apps / Productivity; etiketler: Focus (ana), Time management, Alarms, Study
    - Ad, kısa ve uzun açıklama (TR ve EN): [magaza/metinler.md](../magaza/metinler.md)
